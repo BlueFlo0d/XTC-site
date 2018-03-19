@@ -16,13 +16,13 @@ window.ontouchend = function() {
 }
 
 window.onscroll = function(event) {
+	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	changeNav(scrollTop);
 	if (runningFlag || touchFlag) {
 		//event.preventDefault();
 		return;
 	}
-	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 	if (scrollTop <= target.offset().top) changePage(scrollTop);
-	//changeNav(scrollTop);
 	console.log(scrollTop + " " + target.offset().top + " " + window.innerHeight);
 };
 
@@ -50,8 +50,35 @@ function changePage(scrollTop) {
 		});
 	}
 }
-/*
+
 function changeNav(scrollTop) {
-	if (scrollTop >= pos) changeClass($("#top"), "navbar-dark", "navbar-light");
-	else changeClass($("#top"), "navbar-light", "navbar-dark");
-}*/
+	console.log(scrollTop + " " + target.offset().top);
+	if (scrollTop >= target.offset().top) {
+		$("#top").removeClass("no-background-color");
+		$("#top").addClass("navbar-fixed-top");
+		$("style").eq(1).html("");
+	}
+	else {
+		$("#top").addClass("no-background-color");
+		$("#top").removeClass("navbar-fixed-top");
+		$("style").eq(1).html("	#top a {\
+		color: #FFF;\
+	}\
+	#top span {\
+		background-color: #FFF;\
+	}\
+	.nav li a {\
+		color: rgba(255,255,255,0.8) !important;\
+	}\
+	.nav .open > a, .dropdown-menu a {\
+		color: rgba(255,255,255,0.8) !important;\
+		background-color: #337ab7 !important;\
+	}\
+	.dropdown-menu {\
+		background-color: #337ab7 !important;\
+	}\
+	.dropdown-menu a:focus, .dropdown-menu a:hover {\
+		background-color: #104590 !important;\
+	}");
+	}
+}
