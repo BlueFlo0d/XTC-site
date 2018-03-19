@@ -1,0 +1,196 @@
+<!doctype html>
+<html style="height: 100%">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+<title>Test Coin</title>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script sre="https://cdn.bootcss.com/popper.js/1.14.0/esm/popper.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<style>
+	#top a {
+		color: #FFF;
+	}
+	#top span {
+		background-color: #FFF;
+	}
+	.no-border-color {
+		border-color: #003171;
+	}
+	.vcenter {
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+	}
+	.padder {
+		padding-bottom: 4em;
+		padding-top: 4em;
+		min-width: 100%;
+	}
+	.body-color {
+		background-color: #F0F1F7;
+	}
+	.body-block {
+		padding: 2em;
+	}
+	.body-text-color {
+		color: #5C6A79;
+	}
+	.nav li a {
+		color: rgba(255,255,255,0.8) !important;
+	}
+	.nav .open > a, .dropdown-menu a {
+		color: rgba(255,255,255,0.8) !important;
+		background-color: #337ab7 !important;
+	}
+	.dropdown-menu {
+		background-color: #337ab7 !important;
+	}
+	.dropdown-menu a:focus, .dropdown-menu a:hover {
+		background-color: #104590 !important;
+	}
+</style>
+</head>
+<body style="height: 100%; background-color: #003171;">
+
+<div class="navbar navbar-default no-border-color" id="top" style="background-color: rgba(0,0,0,0);">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<div class="navbar-brand">
+				<img src='images/testcoin.svg' alt='Enfold Theme Demo' style="opacity: 0.8; height:160%; margin-top: -2%;"/>
+			</div><!--http://iph.href.lu/256x64?text=logo-->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">	
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse navbar-right" id="navBar">
+			<ul class="nav navbar-nav">
+				<li><a href="index">Home</a></li>
+				<li><a href="support">Support</a></li>
+				<li><a href="downloads">Downloads</a></li>
+				<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pool <i class="fa fa-caret-down"></i></a>
+          			<ul class="dropdown-menu" style="background-color: #337ab7">
+			            <li><a href="#">Dashboard</a></li>
+			            <li><a href="#">Getting Start</a></li>
+			            <li><a href="#">Pool Stats</a></li>
+			            <li><a href="#">Support</a></li>
+          			</ul>
+        		</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="height: 100%; min-width: 100%">
+
+	<div class="row" style="background-color: #003171; position: relative; height: 100%; width: 100%; overflow-y: hidden;">
+		<div class="col-md-5 col-md-offset-1 col-xs-8 col-xs-offset-2 vcenter" style="color: #FFF;">
+			
+			<h1>Test Coin</h1>
+			<ul>
+				<li><h4>Security</h4></li>
+				<li><h4>Anonymity</h4></li>
+				<li><h4>ASIC Resistance</h4></li>
+				<li><h4>Buyer-Seller model support</h4></li>
+				<li><h4>Multi-signature support</h4></li>
+			</ul>
+			<div class="btn-group" role="group" aria-label="" style="margin-left: 2em; margin-top: 1em;">
+  				<a type="button" class="btn btn-primary" id="download">Download for </a><!--btn-primary-->
+  
+  				<div class="btn-group" role="group">
+    				<a type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      					<span class="caret"></span>
+    				</a>
+				    <ul class="dropdown-menu">
+				      <li><a href="#">Dropdown link</a></li>
+				      <li><a href="#">Dropdown link</a></li>
+				    </ul>
+ 				</div>
+			</div>
+			
+		</div><!--The spelling of destruction--><div class="col-md-6  col-xs-12 vcenter text-center" style="height: 100%; padding: auto !important; overflow-y: hidden;">
+			<img src="images/iphone.svg" class="img-responsive" style="margin: 10%; min-width: 80%; overflow-y: hidden;opacity: 0.8;"/>
+		</div>
+
+		<div style="position: absolute; bottom: 0px; color: #FFF; left: 50%; transform: translateX(-50%);">
+			<i class="fa fa-angle-double-down fa-3x" id="more"></i>
+		</div>
+	</div>
+
+	<!--<div class="row" style="background-color: #003171; position: relative; max-height: 100%; overflow-y: hidden;"><div class="col-md-5 col-md-offset-1 vcenter" style="color: #FFF;"><p class="align-middle" style=""><h1>Test Coin</h1><ul><li><h4>Security</h4></li><li><h4>Anonymity</h4></li><li><h4>ASIC Resistance</h4></li><li><h4>Buyer-Seller model support</h4></li><li><h4>Multi-signature support</h4></li></ul></p></div><div class="col-md-6 vcenter" style="max-height: 100%; overflow-y: hidden;"><img src="iphone.jpg" class="img-responsive" style="max-height: 100%; overflow-y: hidden;"/></div><div style="position: absolute; bottom: 0px; color: #FFF; left: 50%; transform: translateX(-50%);"><i class="fa fa-angle-double-down fa-3x" id="more"></i></div></div>-->
+
+
+	<div class="row padder body-color" style="padding-bottom: 6em">
+	
+		<div class="col-md-6 col-md-offset-3 vcenter body-text-color">
+			<div class="text-center">
+				<h1>Lorem ipsum</h1>
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</div>
+				<div>Deserunt corrupti odit porro quasi quas asperiores quibusdam eligendi quae possimus culpa a ipsa, minima, voluptates autem suscipit perspiciatis provident ipsum in voluptate blanditiis recusandae nihil eius quia. Quis, cum.</div>
+				<div>Delectus assumenda accusantium laboriosam, adipisci eius repudiandae consequatur facere laudantium cumque quo, neque fuga dolore a id consequuntur voluptatibus quidem? Quia iusto, qui dolorem officia distinctio sit voluptatem. Voluptatum, vel.</div>
+				<div>Fugiat incidunt, eius similique aliquam repellendus ad quae perspiciatis accusamus nam sequi unde id in eaque reprehenderit, veniam maiores omnis veritatis ut dolores dolorum alias ipsum laborum. Voluptate, atque explicabo!</div>
+			</div>
+		</div>
+	
+	</div>
+
+	<div class="row padder body-text-color" style="background-color: #F9F7FE;">
+		<div class="col-md-3 col-sm-6 col-xs-12 body-block">
+			<div class="body-color body-block">
+				<h1>Lorem ipsum</h1>
+				<p>Dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</p>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-12 body-block">
+			<div class="body-color body-block">
+				<h1>Lorem ipsum</h1>
+				<p>Dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</p>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-12 body-block">
+			<div class="body-color body-block">
+				<h1>Lorem ipsum</h1>
+				<p>Dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</p>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-12 body-block">
+			<div class="body-color body-block">
+				<h1>Lorem ipsum</h1>
+				<p>Dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</p>
+			</div>
+		</div>
+	</div>
+	<div class="row padder body-color">
+		<div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12 body-block text-center">
+			<img src="http://iph.href.lu/480x640?text=image" style="max-width: 100%" />
+		</div>
+		<div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12 body-block  body-text-color">
+			<h1>Lorem ipsum</h1>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum repellat, ab voluptatem saepe, exercitationem modi, enim tempore vitae debitis, atque eveniet maxime. Illo et cupiditate, ullam molestiae veniam nesciunt, deleniti.</div>
+			<div>Deserunt corrupti odit porro quasi quas asperiores quibusdam eligendi quae possimus culpa a ipsa, minima, voluptates autem suscipit perspiciatis provident ipsum in voluptate blanditiis recusandae nihil eius quia. Quis, cum.</div>
+			<div>Delectus assumenda accusantium laboriosam, adipisci eius repudiandae consequatur facere laudantium cumque quo, neque fuga dolore a id consequuntur voluptatibus quidem? Quia iusto, qui dolorem officia distinctio sit voluptatem. Voluptatum, vel.</div>
+			<div>Fugiat incidunt, eius similique aliquam repellendus ad quae perspiciatis accusamus nam sequi unde id in eaque reprehenderit, veniam maiores omnis veritatis ut dolores dolorum alias ipsum laborum. Voluptate, atque explicabo!</div>
+		</div>
+	</div>
+</div>
+
+<script src="scroll.js"></script>
+<script src="ua.js"></script>
+<script>
+	var deviceArray = ["iOS", "Android", "macOS", "Windows"];
+	var hrefArray = ["iOS", "Android", "macOS", "Windows"];
+	document.getElementById("download").innerHTML += deviceArray[checkUA()];
+	document.getElementById("download").addEventListener("click", function(event){
+		//location.href 
+		alert(hrefArray[checkUA()]);
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  
+    <title>webitcast案例</title>  
+    <style>  
+        body {  
+            padding: 0;  
+            margin: 0;  
+            background-color: #f0f0f0;  
+            overflow: hidden;  
+        }  
+    </style>  
+    <script src="https://cdn.bootcss.com/konva/1.7.6/konva.min.js"></script>  
+</head>  
+<body>  
+    <div id="container">  
+    </div>  
+  
+    <script type="text/javascript">  
+        var stage=new Konva.Stage({//创建舞台  
+            container:'container',  
+            width:window.innerWidth,  
+            height:window.innerHeight  
+        });  
+        var bgLayer=new Konva.Layer();  
+        stage.add(bgLayer);  
+        //开始创建圆形  
+        //中心点坐标  
+        var centX=stage.width()/2;  
+        var centY=stage.height()/2;  
+        //圆形的半径  
+        var innerRadius=126;  
+        var outerRadius=220;  
+        //虚线圆环  
+        var innerCircle=new Konva.Circle({  
+            x:centX,  
+            y:centY,  
+            radius:innerRadius,  
+            stroke:'#ccc',  
+            strokeWidth:4,  
+            dash: [10,4],//虚线  
+        });  
+        var outerCircle=new Konva.Circle({  
+            x:centX,  
+            y:centY,  
+            radius:outerRadius,  
+            stroke:'#ccc',  
+            strokeWidth:4,  
+            dash: [10,4],  
+        });  
+        //中心蓝色的圆圈  
+        var centerCircle=new Konva.Circle({  
+            x:centX,  
+            y:centY,  
+            radius:70,  
+            fill:'#525A82',  
+            opacity:.8  
+        });  
+        //中心圆形的圆环  
+        var centerRing=new Konva.Ring({  
+            x: centX,  
+            y: centY,  
+            innerRadius: 70,//内环的半径  
+            outerRadius: 88,//外环的半径  
+            fill: '#E1E1E1',  
+            opacity: .6  
+        })  
+        //添加中心圆形的字体  
+        var centerText=new Konva.Text({  
+            x:centX-140/2,  
+            y:centY-9,  
+            width:130,  
+            align:'center',  
+            text:'web全栈',  
+            fontSize:18,  
+            fontFamily: '微软雅黑',  
+            fill: '#fff',  
+            fontStyle:'bold'  
+        });  
+          
+        // 开始画动画层  
+        //第一层圆形，黄色的  
+        // 坐标设置  
+        var x1=centX+innerRadius*Math.cos(-60*Math.PI/180);  
+        var y1=centY+innerRadius*Math.sin(-60*Math.PI/180);  
+        var orangeCircle1=new Konva.Circle({  
+            x:x1,  
+            y:y1,  
+            radius:30,  
+            fill:'orange',  
+            opacity:.7  
+        });  
+        //黄色圆的圆环  
+        var orangeRing1=new Konva.Ring({  
+            x:x1,  
+            y:y1,  
+            innerRadius:30,  
+            outerRadius:38,  
+            fill: '#E1E1E1',  
+            opacity: .6  
+        });  
+        console.log(x1)  
+        console.log(y1)  
+        var orangeText=new Konva.Text({  
+            x:x1-30,  
+            y:y1-8,  
+            width:60,  
+            // align:'center',  
+            text:'HTML5',  
+            fontSize:16,  
+            fontFamily: '微软雅黑',  
+            fill: '#fff',  
+            fontStyle:'bold'  
+        });  
+        //第一层圆形，Pink色的  
+        var x2=centX+innerRadius*Math.cos(180*Math.PI/180);  
+        var y2=centY+innerRadius*Math.sin(180*Math.PI/180);  
+        var pinkCircle1=new Konva.Circle({  
+            x:x2,  
+            y:y2,  
+            radius:30,  
+            fill:'pink',  
+            opacity:.7  
+        });  
+        var pinkRing1=new Konva.Ring({  
+            x:x2,  
+            y:y2,  
+            innerRadius:30,  
+            outerRadius:38,  
+            fill: '#E1E1E1',  
+            opacity: .6  
+        });  
+        var pinkText=new Konva.Text({  
+            x:x2-30,  
+            y:y2-8,  
+            width:60,  
+            align:'center',  
+            text:'CSS3',  
+            fontSize:16,  
+            fontFamily: '微软雅黑',  
+            fill: '#fff',  
+            fontStyle:'bold'  
+        });  
+  
+        ////第2层圆形，blue色的  
+        var x3=centX+outerRadius*Math.cos(45*Math.PI/180);  
+        var y3=centY+outerRadius*Math.sin(45*Math.PI/180);  
+        var blueCircle2=new Konva.Circle({  
+            x:x3,  
+            y:y3,  
+            radius:40,  
+            fill:'#A4C9F6',  
+            opacity:.7  
+        });  
+        var blueRing2=new Konva.Ring({  
+            x:x3,  
+            y:y3,  
+            innerRadius:40,  
+            outerRadius:50,  
+            fill: '#E1E1E1',  
+            opacity: .6  
+        });  
+        var blueText=new Konva.Text({  
+            x:x3-40,  
+            y:y3-8,  
+            width:80,  
+            align:'center',  
+            text:'JS',  
+            fontSize:16,  
+            fontFamily: '微软雅黑',  
+            fill: '#fff',  
+            fontStyle:'bold'  
+        });  
+  
+        bgLayer.add(innerCircle);  
+        bgLayer.add(outerCircle);  
+        bgLayer.add(centerCircle);  
+        bgLayer.add(centerRing);  
+        bgLayer.add(centerText);  
+        bgLayer.add(orangeCircle1);  
+        bgLayer.add(orangeRing1);  
+        bgLayer.add(orangeText);  
+        bgLayer.add(pinkCircle1);  
+        bgLayer.add(pinkRing1);  
+        bgLayer.add(pinkText);  
+        bgLayer.add(blueCircle2);  
+        bgLayer.add(blueRing2);  
+        bgLayer.add(blueText);  
+        bgLayer.draw();  
+    </script>  
+</body>  
+</html>
