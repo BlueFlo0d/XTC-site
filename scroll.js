@@ -56,12 +56,12 @@ function changeNav(scrollTop) {
 	if (scrollTop >= target.offset().top) {
 		$("#top").removeClass("no-background-color");
 		$("#top").addClass("navbar-fixed-top");
-		$("style").eq(2).html("");
+		$("style").eq(1).html("");
 	}
 	else {
 		$("#top").addClass("no-background-color");
 		$("#top").removeClass("navbar-fixed-top");
-		$("style").eq(2).html("	#top a {\
+		$("style").eq(1).html("	#top a {\
 		color: #FFF;\
 	}\
 	#top span {\
