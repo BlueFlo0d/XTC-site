@@ -16,6 +16,41 @@
 			margin-top:80px;
 		}
 	}
+	.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+	padding-left: 20px;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+/* Position and style the close button (top right corner) */
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 	#footer a{
 		text-decoration: none;
 		color:rgba(255,255,255,0.8);
@@ -75,7 +110,23 @@
 </style>
 </head>
 <body style="height: 100%; background-color: #003171;">
-
+	<div class="sidenav" id="snv">
+	<ul class="nav navbar-nav">
+				<li><a href="index">Home</a></li>
+				<li><a href="support">Support</a></li>
+				<li><a href="downloads">Downloads</a></li>
+				<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pool <i class="fa fa-caret-down"></i></a>
+          			<ul class="dropdown-menu">
+			            <li><a href="#">Dashboard</a></li>
+			            <li><a href="#">Getting Start</a></li>
+			            <li><a href="#">Pool Stats</a></li>
+			            <li><a href="#">Support</a></li>
+          			</ul>
+        		</li>
+			</ul>
+</div>
+<div id="main">
 <div class="navbar navbar-default no-border-color no-background-color navbar-fixed-top" id="top"><!--navbar-fixed-top-->
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -128,7 +179,7 @@
 </svg>
 
 			</div><!--http://iph.href.lu/256x64?text=logo-->
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">	
+			<button type="button" class="navbar-toggle" onclick="openNav()">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -152,7 +203,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="container" style="height: 100%; min-width: 100%">
 	<div class="scroll-section">
 	<div class="row" style="background-color: #003171; position: relative; height: 100%; width: 100%; overflow-y: hidden;">
@@ -278,7 +328,7 @@
 	</div>
 
 </div>
-
+</div>
 <script src="jquery.scrollify.js"></script>
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script src="ua.js"></script>
@@ -302,6 +352,7 @@
         $.scrollify({
             section : ".scroll-section",
 			before: function(index,sections){
+				fcloseNav(index);
 				if (index == 1) {
 					//$("#top").removeClass("no-background-color","1000");
 					$("#top").animate({"background-color": "#f8f8f8"});
@@ -343,6 +394,45 @@
 			},
         });
     });
+	function openNav() {
+		if($.scrollify.currentIndex()==1){
+			$("#navBar").collapse('toggle');
+		}
+		else{
+			document.getElementById("snv").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+		}
+	}
+
+	/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+	var nav_opened=false;
+	function openNav() {
+		if($.scrollify.currentIndex()==1){
+			$("#navBar").collapse('toggle');
+		}
+		else{
+			if(nav_opened){
+				document.getElementById("snv").style.width = "0";
+				document.getElementById("main").style.marginRight = "0";
+			}
+			else{
+				document.getElementById("snv").style.width = "200px";
+				document.getElementById("main").style.marginRight = "200px";
+			}
+			nav_opened=!nav_opened;
+		}
+	}
+	function fcloseNav(index) {
+		if(index==1){
+			
+			document.getElementById("snv").style.width = "0";
+			document.getElementById("main").style.marginRight = "0";
+			nav_opened=false;
+		}
+		else{
+			$("#navBar").collapse('hide');
+		}
+	}
 </script>
 <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 </body>
