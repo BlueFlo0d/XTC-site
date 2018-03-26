@@ -10,17 +10,18 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="https://cdn.bootcss.com/marked/0.3.17/marked.min.js"></script>
 </head>
-<body>
-<div class="navbar navbar-default no-border-color no-background-color " id="top"><!--navbar-fixed-top-->
+<body style="margin-top: 80px;">
+<div class="navbar navbar-default no-border-color no-background-color navbar-fixed-top" id="top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<div class="navbar-brand">
 				<svg version="1.1" id="logo-banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 544.2 90.7" style="enable-background:new 0 0 544.2 90.7;opacity: 0.8; height: 160%; margin-top: -2%;" xml:space="preserve">
+	 viewBox="0 0 544.2 90.7" style="enable-background:new 0 0 544.2 90.7;opacity: 0.8; height: 120%; margin-top: -2%;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#333;stroke-width:7;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#333;stroke-width:5;stroke-miterlimit:10;}
+	.st2{fill:#333;stroke:#333;stroke-miterlimit:10;}
+	#content img {max-width: 90%;}
 </style>
 <ellipse transform="matrix(0.9272 -0.3746 0.3746 0.9272 -11.3477 32.7557)" class="st0" cx="78.6" cy="45.6" rx="32.7" ry="32.7"/>
 <path class="st1" d="M105.5,64.1"/>
@@ -63,14 +64,13 @@
 </svg>
 
 			</div><!--http://iph.href.lu/256x64?text=logo-->
-			<button type="button" class="navbar-toggle" onclick="openNav()">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
 		</div>
 		<div class="collapse navbar-collapse navbar-right" id="navBar">
-<!--inlcude file="nav.html"-->	
 	<ul class="nav navbar-nav">
 				<li><a href="index">Home</a></li>
 				<li><a href="support">Support</a></li>
@@ -85,6 +85,7 @@
           			</ul>
         		</li>
 			</ul>
+
 
 </div>
 	</div>
