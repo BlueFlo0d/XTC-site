@@ -52,13 +52,6 @@
 			font-size: 18px;
 		}
 	}
-	#footer a {
-		text-decoration: none;
-		color: rgba(255,255,255,0.8);
-	}
-	#footer a:hover {
-		color: rgba(200,200,200,0.5);;
-	}
 	.no-border-color {
 		border-color: transparent;
 	}
@@ -109,20 +102,21 @@
 		background-color: #104590 !important;
 	}
 </style>
-<style type="text/css">
-	.st0{
+<style>
+	.st0 {
 		fill: none;
 		stroke: #fff;
 		stroke-width: 7;
 		stroke-miterlimit: 10;
 	}
-	.st1{
+	.st1 {
 		fill: none;
 		stroke: #fff;
 		stroke-width: 5;
 		stroke-miterlimit: 10;
 	}
-	.st2{fill: #fff;
+	.st2 {
+		fill: #fff;
 		stroke: #fff;
 		stroke-miterlimit: 10;
 	}
@@ -184,7 +178,7 @@
 		</div>
 
 		<div class="scroll-section">
-			<div class="row  padder body-color" style="padding-bottom: 6em;">
+			<div class="row padder body-color" style="padding-bottom: 6em;">
 				<div class="col-md-6 col-md-offset-3 vcenter body-text-color">
 					<div class="text-center sr-slide-divb">
 						<h1 class="sr-slide-i">Lorem ipsum</h1>
@@ -236,39 +230,7 @@
 				</div>
 			</div>
 			
-			<div class="row padder" id="footer" style="color:rgba(255,255,255,0.8);">
-				<div class="col-md-4 col-sm-12">
-					<h3>RESOURCES</h3>
-					<ul>
-						<li><a href="explorer">Blockchain Explorer</a></li>
-						<li><a href="downloads">Downloads</a></li>
-						<li><a href="webwallet">Web Wallet</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4 col-sm-12">
-					<h3>COMMUNITY</h3>
-					<ul>
-						<li><a href="#">Github Repo</a></li>
-						<li><a href="support">Support</a></li>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">E-mail</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4 col-sm-12">
-					<h3>POLICY</h3>
-					<ul>
-						<li><a href="#">Terms of Use</a></li>
-						<li><a href="#">Best Practices</a></li>
-						<li><a href="#">Privacy and Cookies Policy</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row padder" style="color: rgba(255,255,255,0.8);">
-				<div class="col-md-12 text-center">
-					© Copyright - Lorem ipsum
-				</div>
-			</div>
+			<!--#include file="footer.html"-->
 		</div>
 	</div>
 </div>
@@ -278,161 +240,163 @@
 <script src="js/ua.js"></script>
 <script src="js/color.animation.js"></script>
 <script>
-	var deviceArray = ["iOS", "Android", "macOS", "Windows"];
-	var hrefArray = ["iOS", "Android", "macOS", "Windows"];
-	window.sr = ScrollReveal({
-		reset: true,
-		origin: "right"
-	});
-	sr.reveal(".sr-slide", {
-		delay: 200
-	});
-	sr.reveal(".sr-slide-i", {
-		distance: "50px",
-		duration: 1000,
-		scale: 1.0
-	});
-	sr.reveal(".sr-slide-d", {
-		delay: 1000,
-		duration: 1000
-	});
-	sr.reveal(".sr-slide-db div", {
-		delay: 300,
-		duration: 1000,
-		origin: "bottom"
-	}, 50);
-	sr.reveal(".sr-slide li", {
-		delay: 500
-	}, 100);
-	sr.reveal(".sr-slide-divb div", {
-		origin: "bottom",
-		delay: 300
-	}, 100);
-	sr.reveal(".ca-b", {
-		origin: "bottom",
-		distance: "300px",
-		easing: "linear",
-		scale: 1.0
-	});
-	document.getElementById("download").innerHTML += deviceArray[checkUA()];
-	document.getElementById("download").addEventListener("click", function(event) {
-		alert(hrefArray[checkUA()]);
-	});
-	$(function() {
-		$.scrollify({
-			section: ".scroll-section",
-			before: function(index, sections) {
-				fcloseNav(index);
-				if (index >= 1) {
-					//$("#top").removeClass("no-background-color","1000");
-					$("#top").animate({
-						"background-color": "#f8f8f8"
-					});
-					$("#logo-banner").animate({
-						height: "120%",
-						"margin-top": "-4%"
-					}, 400, "linear");
-					$("style").eq(1).html("");
-					$(".st0").css({
-						"stroke": "#333",
-						trasition: ".4s"
-					});
-					$(".st1").css({
-						"stroke": "#333",
-						trasition: ".4s"
-					});
-					$(".st2").css({
-						"stroke": "#333",
-						"fill": "#333",
-						trasition: ".4s"
-					});
-					$(".ca-b").animate({
-						translateY: 500
-					});
-				} else {
-					$(".ca-b").animate({
-						translateY: 0
-					});
-					$(".st0").css({
-						"stroke": "#fff",
-						trasition: ".4s"
-					});
-					$(".st1").css({
-						"stroke": "#fff",
-						trasition: ".4s"
-					});
-					$(".st2").css({
-						"stroke": "#fff",
-						"fill": "#fff",
-						trasition: ".4s"
-					});
-					$("#top").animate({
-						"background-color": "rgba(0,0,0,0.0)"
-					});
-					$("#logo-banner").animate({
-						height: "140%",
-						"margin-top": "-2%"
-					}, "linear");
-					$("style").eq(1).html("	#top a {\
-						color: #fff;\
-					}\
-					#top span {\
-						background-color: #fff;\
-					}\
-					.nav li a {\
-						color: rgba(255,255,255,0.8) !important;\
-					}\
-					.nav .open > a, .dropdown-menu a {\
-						color: rgba(255,255,255,0.8) !important;\
-						background-color: #337ab7 !important;\
-					}\
-					.dropdown-menu {\
-						background-color: #337ab7 !important;\
-					}\
-					.dropdown-menu a:focus, .dropdown-menu a:hover {\
-						background-color: #104590 !important;\
-					}");
-				}
-			},
-		});
-	});
+var deviceArray = ["iOS", "Android", "macOS", "Windows"];
+var hrefArray = ["iOS", "Android", "macOS", "Windows"];
+document.getElementById("download").innerHTML += deviceArray[checkUA()];
+document.getElementById("download").addEventListener("click", function(event) {
+	alert(hrefArray[checkUA()]);
+});
 
-	function openNav() {
-		if ($.scrollify.currentIndex() == 1) {
-			$("#navBar").collapse("toggle");
-		} else {
-			document.getElementById("snv").style.width = "200px";
-			document.getElementById("main").style.marginLeft = "200px";
-		}
-	}
+window.sr = ScrollReveal({
+	reset: true,
+	origin: "right"
+});
+sr.reveal(".sr-slide", {
+	delay: 200
+});
+sr.reveal(".sr-slide-i", {
+	distance: "50px",
+	duration: 1000,
+	scale: 1.0
+});
+sr.reveal(".sr-slide-d", {
+	delay: 1000,
+	duration: 1000
+});
+sr.reveal(".sr-slide-db div", {
+	delay: 300,
+	duration: 1000,
+	origin: "bottom"
+}, 50);
+sr.reveal(".sr-slide li", {
+	delay: 500
+}, 100);
+sr.reveal(".sr-slide-divb div", {
+	origin: "bottom",
+	delay: 300
+}, 100);
+sr.reveal(".ca-b", {
+	origin: "bottom",
+	distance: "300px",
+	easing: "linear",
+	scale: 1.0
+});
 
-	/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-	var nav_opened = false;
-
-	function openNav() {
-		if ($.scrollify.currentIndex() == 1) {
-			$("#navBar").collapse("toggle");
-		} else {
-			if (nav_opened) {
-				document.getElementById("snv").style.width = "0";
-				document.getElementById("main").style.marginRight = "0";
+$(function() {
+	$.scrollify({
+		section: ".scroll-section",
+		before: function(index, sections) {
+			fcloseNav(index);
+			if (index >= 1) {
+				//$("#top").removeClass("no-background-color","1000");
+				$("#top").animate({
+					"background-color": "#f8f8f8"
+				});
+				$("#logo-banner").animate({
+					height: "120%",
+					"margin-top": "-4%"
+				}, 400, "linear");
+				$("style").eq(1).html("");
+				$(".st0").css({
+					"stroke": "#333",
+					trasition: ".4s"
+				});
+				$(".st1").css({
+					"stroke": "#333",
+					trasition: ".4s"
+				});
+				$(".st2").css({
+					"stroke": "#333",
+					"fill": "#333",
+					trasition: ".4s"
+				});
+				$(".ca-b").animate({
+					translateY: 500
+				});
 			} else {
-				document.getElementById("snv").style.width = "200px";
-				document.getElementById("main").style.marginRight = "200px";
+				$(".ca-b").animate({
+					translateY: 0
+				});
+				$(".st0").css({
+					"stroke": "#fff",
+					trasition: ".4s"
+				});
+				$(".st1").css({
+					"stroke": "#fff",
+					trasition: ".4s"
+				});
+				$(".st2").css({
+					"stroke": "#fff",
+					"fill": "#fff",
+					trasition: ".4s"
+				});
+				$("#top").animate({
+					"background-color": "rgba(0,0,0,0.0);"
+				});
+				$("#logo-banner").animate({
+					height: "140%",
+					"margin-top": "-2%"
+				}, "linear");
+				$("style").eq(1).html("	#top a {\
+					color: #fff;\
+				}\
+				#top span {\
+					background-color: #fff;\
+				}\
+				.nav li a {\
+					color: rgba(255,255,255,0.8) !important;\
+				}\
+				.nav .open > a, .dropdown-menu a {\
+					color: rgba(255,255,255,0.8) !important;\
+					background-color: #337ab7 !important;\
+				}\
+				.dropdown-menu {\
+					background-color: #337ab7 !important;\
+				}\
+				.dropdown-menu a:focus, .dropdown-menu a:hover {\
+					background-color: #104590 !important;\
+				}");
 			}
-			nav_opened = !nav_opened;
-		}
-	}
+		},
+	});
+});
 
-	function fcloseNav(index) {
-		if (index == 1) {
+function openNav() {
+	if ($.scrollify.currentIndex() == 1) {
+		$("#navBar").collapse("toggle");
+	} else {
+		document.getElementById("snv").style.width = "200px";
+		document.getElementById("main").style.marginLeft = "200px";
+	}
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+var nav_opened = false;
+
+function openNav() {
+	if ($.scrollify.currentIndex() == 1) {
+		$("#navBar").collapse("toggle");
+	} else {
+		if (nav_opened) {
 			document.getElementById("snv").style.width = "0";
 			document.getElementById("main").style.marginRight = "0";
-			nav_opened = false;
 		} else {
-			$("#navBar").collapse("hide");
+			document.getElementById("snv").style.width = "200px";
+			document.getElementById("main").style.marginRight = "200px";
 		}
+		nav_opened = !nav_opened;
 	}
+}
+
+function fcloseNav(index) {
+	if (index == 1) {
+		document.getElementById("snv").style.width = "0";
+		document.getElementById("main").style.marginRight = "0";
+		nav_opened = false;
+	} else {
+		$("#navBar").collapse("hide");
+	}
+}
 </script>
 </body>
 </html>
