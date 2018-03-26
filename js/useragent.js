@@ -21,3 +21,9 @@ function checkUA() {
 	}
 	return 1;
 }
+var deviceArray = ["iOS", "Android", "macOS", "Windows"];
+var hrefArray = ["iOS", "Android", "macOS", "Windows"];
+document.getElementById("download").innerHTML += deviceArray[checkUA()];
+document.getElementById("download").addEventListener("click", function(event) {
+	alert(hrefArray[checkUA()]);
+});

@@ -147,7 +147,8 @@
 	</div>
 
 	<div class="container" style="height: 100%; min-width: 100%">
-		<div class="row scroll-section" style="background-color: #003171; position: relative; height: 100%; width: 100%; overflow-y: hidden;">
+		<div class="scroll-section">
+		<div class="row" style="background-color: #003171; position: relative; height: 100%; width: 100%; overflow-y: hidden;">
 			<div id="p1-content" class="col-md-5 col-md-offset-1 col-xs-8 col-xs-offset-2 vcenter" style="color: #fff;">
 				<h1 class="sr-slide">Test Coin</h1>
 				<ul class="sr-slide">
@@ -177,7 +178,7 @@
 				<i class="fa fa-angle-double-down fa-3x" id="more"></i>
 			</div>
 		</div>
-
+		</div>
 		<div class="scroll-section">
 			<div class="row padder body-color" style="padding-bottom: 6em;">
 				<div class="col-md-6 col-md-offset-3 vcenter body-text-color">
@@ -230,7 +231,6 @@
 					<div>Fugiat incidunt, eius similique aliquam repellendus ad quae perspiciatis accusamus nam sequi unde id in eaque reprehenderit, veniam maiores omnis veritatis ut dolores dolorum alias ipsum laborum. Voluptate, atque explicabo!</div>
 				</div>
 			</div>
-			
 			<!--#include file="footer.html"-->
 		</div>
 	</div>
@@ -238,17 +238,10 @@
 
 <script src="js/jquery.scrollify.js"></script>
 <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.0-beta.26/scrollreveal.js"></script>
-<script src="js/ua.js"></script>
+<script src="js/useragent.js"></script>
 <script src="js/color.animation.js"></script>
 <script>
-var deviceArray = ["iOS", "Android", "macOS", "Windows"];
-var hrefArray = ["iOS", "Android", "macOS", "Windows"];
-document.getElementById("download").innerHTML += deviceArray[checkUA()];
-document.getElementById("download").addEventListener("click", function(event) {
-	alert(hrefArray[checkUA()]);
-});
-
-window.sr = ScrollReveal({ //window.hasOwnProperty("ontouchstart")
+window.sr = ScrollReveal({ //if (!window.hasOwnProperty("ontouchstart"))
 	reset: true,
 	origin: "right"
 });
@@ -286,10 +279,10 @@ sr.reveal(".ca-b", {
 $(function() {
 	$.scrollify({
 		section: ".scroll-section",
+		setHeights: false,
 		before: function(index, sections) {
 			fcloseNav(index);
 			if (index >= 1) {
-				//$("#top").removeClass("no-background-color","1000");
 				$("#top").animate({
 					"background-color": "#f8f8f8"
 				});
@@ -338,7 +331,7 @@ $(function() {
 					height: "140%",
 					"margin-top": "-2%"
 				}, "linear");
-				$("style").eq(1).html("	#top a {\
+				$("style").eq(1).html("#top a {\
 					color: #fff;\
 				}\
 				#top span {\
