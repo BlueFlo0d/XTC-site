@@ -1,6 +1,7 @@
 <!--#include file="header.html"-->
 <title>Test Coin</title>
 <!--<script src="https://cdn.bootcss.com/popper.js/1.14.0/esm/popper.js"></script>-->
+<!--<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>-->
 <style>
 	@media (max-width: 991px) {
 		#p1-content {
@@ -19,8 +20,8 @@
 		padding-left: 20px;
 		transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 	}
-	.navbar-toggle:focus{
-		background-color:transparent !important;
+	.navbar-toggle:focus {
+		background-color: transparent !important;
 	}
 
 	/* The navigation menu links */
@@ -122,7 +123,7 @@
 	}
 </style>
 </head>
-<body style="height: 100%; background-color: #003171;">
+<body style="height: 100%; background-color: #003171; overflow-x: hidden;">
 <div class="sidenav" id="snv">
 	<!--#include file="nav.html"-->
 </div>
@@ -247,7 +248,7 @@ document.getElementById("download").addEventListener("click", function(event) {
 	alert(hrefArray[checkUA()]);
 });
 
-window.sr = ScrollReveal({
+window.sr = ScrollReveal({ //window.hasOwnProperty("ontouchstart")
 	reset: true,
 	origin: "right"
 });
@@ -331,7 +332,7 @@ $(function() {
 					trasition: ".4s"
 				});
 				$("#top").animate({
-					"background-color": "rgba(0,0,0,0.0);"
+					"background-color": "rgba(0,0,0,0);"
 				});
 				$("#logo-banner").animate({
 					height: "140%",
@@ -360,15 +361,6 @@ $(function() {
 		},
 	});
 });
-
-function openNav() {
-	if ($.scrollify.currentIndex() == 1) {
-		$("#navBar").collapse("toggle");
-	} else {
-		document.getElementById("snv").style.width = "200px";
-		document.getElementById("main").style.marginLeft = "200px";
-	}
-}
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 var nav_opened = false;
