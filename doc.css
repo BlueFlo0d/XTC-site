@@ -1,0 +1,37 @@
+body {
+	margin-top: 80px;
+	overflow-x: hidden;
+}
+.st0{
+	fill: none;
+	stroke: #333;
+	stroke-width: 7;
+	stroke-miterlimit: 10;
+}
+.st1{
+	fill: none;
+	stroke: #333;
+	stroke-width: 5;
+	stroke-miterlimit: 10;
+}
+.st2{
+	fill: #333;
+	stroke: #333;
+	stroke-miterlimit: 10;
+}
+#content {
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow-x: hidden;
+}
+#content img {
+	max-width: 90%;
+}
+.padder {
+	padding-bottom: 4em;
+	padding-top: 4em;
+	min-width: 100%;
+}
+#footer {
+	margin: 0px !important;
+}
